@@ -1,4 +1,15 @@
 <h1>Đây là Component Home</h1>
 <h1>Cố mà nhớ đi!!!</h1>
 <h2>Ê hôm nay m học module là gì??</h2>
-<h1>Chào bạn {{name}}</h1>
+<h1>Chào bạn {{ name }}</h1>
+<input value="{{ name }}">
+<br>
+<br>
+<input [value]="name" title="Đây là tên">
+<br>
+<br>
+<input [value]="name" title="Đây là {{ name }}">
+<br>
+<br>
+<input [value]="name" [title]="'Đây là '  + name ">
+
