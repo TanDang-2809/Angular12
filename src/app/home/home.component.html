@@ -1,15 +1,48 @@
-<h1>Đây là Component Home</h1>
-<h1>Cố mà nhớ đi!!!</h1>
 <h2>Ê hôm nay m học module là gì??</h2>
 <h1>Chào bạn {{ name }}</h1>
-<input value="{{ name }}">
+<input [(ngModel)]="name" title="Đây là tên"> <!--name là biến có giá trị là Tân Đặng-->
 <br>
 <br>
-<input [value]="name" title="Đây là tên">
+<input [(ngModel)]="age">
 <br>
 <br>
 <input [value]="name" title="Đây là {{ name }}">
 <br>
 <br>
 <input [value]="name" [title]="'Đây là '  + name ">
+<br>
+<br>
+<button (click)="resetName()">Reset tên</button><!--sự kiện . khi click vô sẽ reset lại  -->
+<br>
+<br>
+<!-- <h2 *ngIf = "age > 21">Già rồi tán ai!!</h2>
+<h2 *ngIf = "age <= 21" >Còn trẻ tán chục em!!</h2> -->
+<hr>
+<div *ngIf="age <= 18; then tre; else gia"></div>
+<ng-template #tre><h1>Con trẻ quá con trai!!</h1></ng-template>
+<ng-template #gia><h2>Gìa vậy ai yêu!!</h2></ng-template>
+<hr>
+<br>
+<div *ngFor  = "let tc of traiCay;  let i = index"><!--let i = index số tự động tăng-->
+    <li>{{ i + 1 }}. {{ tc }}</li>
+</div>
+<br>
+<table class="bang">
+    <tr>
+      <th>STT</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Discount</th>
+    </tr>
+    <tr *ngFor = "let tc of traiCay2; let i = index">
+      <td>{{ i + 1 }} </td>
+      <td>{{ tc.name }}</td>
+      <td>
+          <span [ngClass]="{ 'so-am': tc.price <0 }"> {{ tc.price }} </span>
+     </td>
+     <td>
+         <span *ngIf="tc.discount">Đang hạ giá!!</span>
+     </td>
+    </tr>
+</table>
 
