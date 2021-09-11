@@ -36,13 +36,33 @@
     </tr>
     <tr *ngFor = "let tc of traiCay2; let i = index">
       <td>{{ i + 1 }} </td>
-      <td>{{ tc.name }}</td>
+      <td>{{ tc.name | uppercase}}</td>
       <td>
-          <span [ngClass]="{ 'so-am': tc.price <0 }"> {{ tc.price }} </span>
+          <span [ngClass]="{ 'so-am': tc.price <0 }"> {{ tc.price | currency:'VND':'symbol':'1.2'}} </span><!--USD-->
      </td>
      <td>
-         <span *ngIf="tc.discount">Đang hạ giá!!</span>
+         <span >{{ tc.discount | onSale | uppercase}}</span><!--*ngIf="tc.discount"-->
      </td>
     </tr>
 </table>
+<br>
+<!--combobox-->
+Tỉnh / Thành Phố :
+ <select  id="city" (change)="changeCity($event)"><!--change thay đổi-->
+    <option *ngFor ='let data of vietnamData' value="{{ data.city }}">
+        {{ data.city }}
+    </option>
+  </select>
+<br>
+Quận  / Huyện :
+ <select  id="district">
+    <option *ngFor ='let dist of districts' value="{{ dist }}">
+        {{ dist }}
+    </option>
+  </select>
+  <br>
+  <span>Counter = {{ counter }}</span>
+<br>
+  <span>Counter ^2 = {{ counterBinhPhuong }}</span>
+
 
