@@ -16,8 +16,7 @@ export class AboutComponent implements OnInit {
 
   public ngOnInit(): void {
     this.counter = this.common.counter;
-    this.counterBinhPhuong = this.common.binhPhuong(this.counter);
     this.common.counter++;
+    this.counterBinhPhuong = this.common.binhPhuong(this.counter);
   }
-
 }

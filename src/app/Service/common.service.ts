@@ -8,7 +8,7 @@ export class CommonService {
  
   constructor() { }
   
-   public binhPhuong(n : number): number{
+   public binhPhuong(n : number): number{//hàm
      return n * n ;
    }
 }
