@@ -11,4 +11,7 @@ export class CommonService {
    public binhPhuong(n : number): number{
      return n * n ;
    }
+   public submitData(data : any) : void{
+     console.log('gửi data lên server. Data :', data );
+   }
 }
