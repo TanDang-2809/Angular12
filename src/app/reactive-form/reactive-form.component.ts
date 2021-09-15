@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { CommonService } from '../Service/common.service';
+import { CommonService } from '../Services/common.service';
 
 @Component({
   selector: 'app-reactive-form',
