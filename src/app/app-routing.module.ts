@@ -4,10 +4,12 @@ import { AboutComponent } from './about/about.component';
 import { GetDataComponent } from './get-data/get-data.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PostDataComponent } from './post-data/post-dataa.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 
 const routes: Routes = [//phân trang
+  { path: 'postdata', component: PostDataComponent },
   { path: 'getdata', component: GetDataComponent },
   { path: 'about', component: AboutComponent },
   { path: 'home', component: HomeComponent },
